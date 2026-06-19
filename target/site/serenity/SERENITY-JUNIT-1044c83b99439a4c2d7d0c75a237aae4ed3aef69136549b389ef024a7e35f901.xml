@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Visualización del panel principal" skipped="0" tests="2" time="11.13" timestamp="2026-06-19 05:11:49"><testcase name="Visualizar correctamente el panel principal del sistema"/><testcase name="Consultar los widgets e indicadores disponibles"/></testsuite>

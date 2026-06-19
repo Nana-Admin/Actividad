@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Actualización del perfil de usuario" skipped="0" tests="2" time="15.67" timestamp="2026-06-19 05:10:52"><testcase name="Actualizar la informacion personal del usuario autenticado"/><testcase name="Actualizar la fotografia de perfil"/></testsuite>

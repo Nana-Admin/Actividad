@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="330c8ed1cfb674485a4c3171e7af9beded22b7284f12c690318832ceb85d8a8c.html">Create User</a></span>
+                > <span class="truncate-60"><a
+                    href="ce532e2245b41e73575f1bb1616351485c36477397ab38b929fff67c3a2f86c0.html">Crear un usuario del sistema </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="bi bi-chat-text"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 19-06-2026 17:08</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Creación De Usuarios Del Sistema </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="8215d9b2dfcac95342423b7eac756caf5af3f9cbbe1e689942ff2dc6f83a4971.html">Positivo
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="34658a1663fcf042bd7acb3325affbe4e647c8acd84d0228be2f52e1381e61b9.html">10 To 30 Seconds
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="3447f77379c16a5bb29fa6a6fe37b4b4d20fe344b053c4ae136be0a1e7290834.html">Admin
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="d79b61245c4932654d2cbf184e02e13fded58e81c113bc8d667481ce56540fd1.html">Create User
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Crear un usuario del sistema
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Dado que el usuario esta autenticado en el sistema" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Usuario opens the browser at https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" width="0"/>
+                <img src="972087116fc34e334b0a67131c55e3eccc6782b19e7eb0b8882ef50b221acf95.png" title=" Usuario enters 'Admin' into Username input" width="0"/>
+                <img src="d0f6927b7b70e532a4750ff92455323be64bbe856a3dab3fe4cb328c5fa33e1b.png" title=" Usuario enters 'admin123' into Password input" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Usuario clicks on Login button" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Dado que el usuario esta autenticado en el sistema (completed)" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Cuando el usuario navega a la seccion de administracion de usuarios" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Usuario navigates to user management" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Usuario opens the browser at https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Usuario navigates to user management (completed)" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Cuando el usuario navega a la seccion de administracion de usuarios (completed)" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Y el usuario hace clic en agregar usuario" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Usuario clicks add user" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Usuario clicks on Add user button" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Usuario clicks add user (completed)" width="0"/>
+                <img src="73d8bbc03ca5bd00ec2fa3de00487e717f2f35e03fe0b1bd21e4758fa98a7c36.png" title=" Y el usuario hace clic en agregar usuario (completed)" width="0"/>
+                <img src="59246565241f93c3bd4bef25e94f28bed3fab3925845b65b6a1f5e5c1c7d9d5c.png" title=" Y el usuario completa el formulario con usuario &quot;testuser123&quot; y contrasena &quot;Test123456&quot;" width="0"/>
+                <img src="59246565241f93c3bd4bef25e94f28bed3fab3925845b65b6a1f5e5c1c7d9d5c.png" title=" Usuario fills user form" width="0"/>
+                <img src="59246565241f93c3bd4bef25e94f28bed3fab3925845b65b6a1f5e5c1c7d9d5c.png" title=" Usuario clicks on User role dropdown" width="0"/>
+                <img src="06a6ff4dfb9f17c0ac869ca2f1e2242d7ad53196c3688f60aa6ad1ee0950f1c2.png" title=" Usuario clicks on User role option Admin" width="0"/>
+                <img src="a4db4f982fbb6aaa0146131b95f486e1f38dd268b1592c3943df4da9f1f6c8e2.png" title=" Usuario enters 'testuser123266' into Username input" width="0"/>
+                <img src="e92af77883b8a34a903bb2d821297da967a92a5d4f6f14a2b69741fec56ee702.png" title=" Usuario enters 'Test123456' into Password input - user form" width="0"/>
+                <img src="951a44635af00e3d58505834944d7c2c0d533702e2719a9922523b0d33db3fba.png" title=" Usuario enters 'Test123456' into Confirm password input" width="0"/>
+                <img src="951a44635af00e3d58505834944d7c2c0d533702e2719a9922523b0d33db3fba.png" title=" Usuario fills user form (completed)" width="0"/>
+                <img src="951a44635af00e3d58505834944d7c2c0d533702e2719a9922523b0d33db3fba.png" title=" Y el usuario completa el formulario con usuario &quot;testuser123&quot; y contrasena &quot;Test123456&quot; (completed)" width="0"/>
+                <img src="d9fbce66aff0cada03fd332da8cc8b27cdc422fee4df39234006dc2d959b3d68.png" title=" Y el usuario guarda el nuevo usuario" width="0"/>
+                <img src="d9fbce66aff0cada03fd332da8cc8b27cdc422fee4df39234006dc2d959b3d68.png" title=" Usuario saves the user" width="0"/>
+                <img src="d9fbce66aff0cada03fd332da8cc8b27cdc422fee4df39234006dc2d959b3d68.png" title=" Usuario clicks on Save user button" width="0"/>
+                <img src="d9fbce66aff0cada03fd332da8cc8b27cdc422fee4df39234006dc2d959b3d68.png" title=" Usuario saves the user (completed)" width="0"/>
+                <img src="d9fbce66aff0cada03fd332da8cc8b27cdc422fee4df39234006dc2d959b3d68.png" title=" Y el usuario guarda el nuevo usuario (completed)" width="0"/>
+                <img src="a563e68d69cbe7a6f788c81c82ce7d7f710fe6e3ef91cd0fa2998255d156b799.png" title=" Entonces el sistema confirma la creacion del usuario" width="0"/>
+                <img src="a563e68d69cbe7a6f788c81c82ce7d7f710fe6e3ef91cd0fa2998255d156b799.png" title=" Then User created should be (true)" width="0"/>
+
+                <img src="a563e68d69cbe7a6f788c81c82ce7d7f710fe6e3ef91cd0fa2998255d156b799.png" title=" Entonces el sistema confirma la creacion del usuario (completed): <span class='success-color'>SUCCESS</span>" width="0"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 4.2.20</span>
+</div>
+</body>
+</html>
