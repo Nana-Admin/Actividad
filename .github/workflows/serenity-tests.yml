@@ -1,47 +1,36 @@
-name: Serenity BDD Tests
+name: Deploy Serenity Report to GitHub Pages
 
 on:
   push:
     branches: [master]
-  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up JDK 24
-        uses: actions/setup-java@v4
-        with:
-          java-version: '24'
-          distribution: 'temurin'
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          chrome-version: 'stable'
+          path: target/site/serenity
 
-      - name: Cache Maven dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.m2
-          key: maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: maven-
-
-      - name: Run tests
-        run: |
-          mvn verify \
-            -Dwebdriver.chrome.driver=$(which chromedriver) \
-            -Dheadless.mode=true \
-            -Dserenity.timeout=15000 \
-            -DfailIfNoTests=false
-
-      - name: Upload Serenity Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: serenity-report
-          path: target/site/serenity/
-          retention-days: 30
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
